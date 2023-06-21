@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     AdminLayoutComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ComponentsModule,
@@ -25,7 +25,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

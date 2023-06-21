@@ -1,10 +1,40 @@
+<!--
+<div class="logo">
+    <a href="#" class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        Creative Tim
+    </a>
+</div>
 <div class="sidebar-wrapper">
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
+                <mat-icon>{{menuItem.icon}}</mat-icon>
                 <p>{{menuItem.title}}</p>
             </a>
         </li>
     </ul>
 </div>
+-->
+<mat-nav-list>
+    <div class="companyInfo">
+        <div class="company_logo">
+            <img src="/assets/img/angular2-logo-red.png" alt="Company Logo" />
+        </div>
+        <div class="company_text">
+            <span style="--i:1">L</span>
+            <span style="--i:2">O</span>
+            <span style="--i:3">G</span>
+            <span style="--i:4">O</span>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngFor="let menuItem of menuItems">
+        <a mat-list-item routerLinkActive="list-item-active" [routerLink]="[menuItem.path]">
+            <mat-icon class="sidebar_icon">{{menuItem.icon}}</mat-icon>
+            <span class="sidebar_title">{{menuItem.title}}</span>
+        </a>
+    </div>
+</mat-nav-list>

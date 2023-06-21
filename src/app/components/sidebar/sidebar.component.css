@@ -1,0 +1,49 @@
+.mat-nav-list{
+    display: block;
+}
+.companyInfo{
+    display: flex;
+}
+.company_logo img{
+    width: 50px !important;
+    height: 50px !important;
+}
+/*Design the Company name*/
+.company_text {
+    position: relative;
+    margin-top: 20px;
+  }
+.company_text span {
+position: relative;
+display: inline-block;
+font-size: 30px;
+color: rgba(103, 58, 183, 0.25);;
+text-transform: uppercase;
+animation: flip 2s infinite;
+animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+0%,80% {
+    transform: rotateY(360deg) 
+}
+}
+/*end design*/
+.mat-list-item {
+    display: flex;
+    /*color: #94a3b8 !important;*/
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin: 4px;
+    &:hover {
+      color: #f2f5f7 !important;
+    }
+    border-radius: 4px;  
+}
+.list-item-active {  
+    background-color: #9c27b0 !important;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+    border-radius: 4px;
+}
+.mat-list-item .sidebar_icon, .mat-list-item .sidebar_title{
+    flex: 1;
+}
