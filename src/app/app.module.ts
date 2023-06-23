@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
+import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
     AppRoutingModule,
     BrowserAnimationsModule,
     ComponentsModule,
+    AdminLayoutModule,
     FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,

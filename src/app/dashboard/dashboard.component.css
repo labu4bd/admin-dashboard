@@ -1,0 +1,19 @@
+.mat-grid-list{
+    margin-top: 50px;
+}
+.mat-mdc-card-content{
+    text-align: right !important;
+}
+.mat-card{
+    width: 75% !important;
+}
+.card_header_logo{
+    border-radius: 3px;
+    background-color: #999;
+    padding: 15px;
+    margin-top: -25px;
+    margin-right: 15px;
+    float: left;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(255,152,0,.4);
+    background: linear-gradient(60deg,#ffa726,#fb8c00);
+}

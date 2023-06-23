@@ -18,6 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -32,6 +36,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSelectModule,
     MatTooltipModule,
     MatSidenavModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule,
+    MatProgressBarModule
   ],
   declarations: [
     DashboardComponent,
