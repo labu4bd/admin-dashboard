@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatDividerModule} from '@angular/material/divider';
     HttpClientModule,
     RouterModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
