@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef  } from '@angular/core';
 import * as Chartist from 'chartist';
+import Chart from 'chart.js/auto';
 //import { Chartist  } from 'chartist';
+//import 'chartist/dist/index.css';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +10,8 @@ import * as Chartist from 'chartist';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  public chart: any;
+  constructor(private elementRef: ElementRef) { }
   startAnimationForLineChart(chart:any){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -67,6 +69,7 @@ export class DashboardComponent implements OnInit {
       seq2 = 0;
   };
   ngOnInit() {
+    this.createChart();
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       const dataDailySalesChart: any = {
@@ -85,9 +88,9 @@ export class DashboardComponent implements OnInit {
           chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
       }
 
-      var dailySalesChart = new Chartist.LineChart('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-      this.startAnimationForLineChart(dailySalesChart);
+      //var dailySalesChart = new Chartist.LineChart('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+      
+      //this.startAnimationForLineChart(dailySalesChart);
 
 
       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
@@ -108,10 +111,10 @@ export class DashboardComponent implements OnInit {
           chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
       }
 
-      var completedTasksChart = new Chartist.LineChart('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
+      //var completedTasksChart = new Chartist.LineChart('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
 
       // start animation for the Completed Tasks Chart - Line Chart
-      this.startAnimationForLineChart(completedTasksChart);
+      //this.startAnimationForLineChart(completedTasksChart);
 
 
 
@@ -142,10 +145,30 @@ export class DashboardComponent implements OnInit {
           }
         }]
       ];
-      var websiteViewsChart = new Chartist.BarChart('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions);
+      //var websiteViewsChart = new Chartist.BarChart('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions);
 
       //start animation for the Emails Subscription Chart
-      this.startAnimationForBarChart(websiteViewsChart);
+      //this.startAnimationForBarChart(websiteViewsChart);
   }
+  createChart(){
+    let htmlRef = this.elementRef.nativeElement.querySelector(`#subsChart`);
+    this.chart = new Chart(htmlRef, {
+      type: 'bar', //this denotes tha type of chart
 
+      data: {// values on X-Axis
+        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D' ], 
+	       datasets: [
+          {
+            label: "Sales",
+            data: [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+            backgroundColor: 'white'
+          },  
+        ]
+      },
+      options: {
+        aspectRatio:2.3
+      }
+      
+    });
+  }
 }
