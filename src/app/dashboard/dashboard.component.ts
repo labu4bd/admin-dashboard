@@ -10,163 +10,109 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public chart: any;
+  public lineChart: any;
+  public barChart: any;
+  public bubbleChart: any;
   constructor(private elementRef: ElementRef) { }
-  startAnimationForLineChart(chart:any){
-      let seq: any, delays: any, durations: any;
-      seq = 0;
-      delays = 80;
-      durations = 500;
 
-      chart.on('draw', function(data:any) {
-        if(data.type === 'line' || data.type === 'area') {
-          data.element.animate({
-            d: {
-              begin: 600,
-              dur: 700,
-              from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-              to: data.path.clone().stringify(),
-              easing: Chartist.Svg.Easing.easeOutQuint
-            }
-          });
-        } else if(data.type === 'point') {
-              seq++;
-              data.element.animate({
-                opacity: {
-                  begin: seq * delays,
-                  dur: durations,
-                  from: 0,
-                  to: 1,
-                  easing: 'ease'
-                }
-              });
-          }
-      });
-
-      seq = 0;
-  };
-  startAnimationForBarChart(chart:any){
-      let seq2: any, delays2: any, durations2: any;
-
-      seq2 = 0;
-      delays2 = 80;
-      durations2 = 500;
-      chart.on('draw', function(data:any) {
-        if(data.type === 'bar'){
-            seq2++;
-            data.element.animate({
-              opacity: {
-                begin: seq2 * delays2,
-                dur: durations2,
-                from: 0,
-                to: 1,
-                easing: 'ease'
-              }
-            });
-        }
-      });
-
-      seq2 = 0;
-  };
   ngOnInit() {
-    this.createChart();
-      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
-      const dataDailySalesChart: any = {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-              [12, 17, 7, 17, 23, 18, 38]
-          ]
-      };
-
-     const optionsDailySalesChart: any = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-      }
-
-      //var dailySalesChart = new Chartist.LineChart('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-      
-      //this.startAnimationForLineChart(dailySalesChart);
-
-
-      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-      const dataCompletedTasksChart: any = {
-          labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
-          series: [
-              [230, 750, 450, 300, 280, 240, 200, 190]
-          ]
-      };
-
-     const optionsCompletedTasksChart: any = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 0
-          }),
-          low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
-      }
-
-      //var completedTasksChart = new Chartist.LineChart('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
-      // start animation for the Completed Tasks Chart - Line Chart
-      //this.startAnimationForLineChart(completedTasksChart);
-
-
-
-      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-      var datawebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-        series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-        ]
-      };
-      var optionswebsiteViewsChart = {
-          axisX: {
-              showGrid: false
-          },
-          low: 0,
-          high: 1000,
-          chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
-      };
-      var responsiveOptions: any[] = [
-        ['screen and (max-width: 640px)', {
-          seriesBarDistance: 5,
-          axisX: {
-            labelInterpolationFnc: function (value:any) {
-              return value[0];
-            }
-          }
-        }]
-      ];
-      //var websiteViewsChart = new Chartist.BarChart('#websiteViewsChart', datawebsiteViewsChart, optionswebsiteViewsChart, responsiveOptions);
-
-      //start animation for the Emails Subscription Chart
-      //this.startAnimationForBarChart(websiteViewsChart);
+    this.createLineChart();
+    this.createBarChart();
+    this.createBubbleChart();
   }
-  createChart(){
-    let htmlRef = this.elementRef.nativeElement.querySelector(`#subsChart`);
-    this.chart = new Chart(htmlRef, {
-      type: 'bar', //this denotes tha type of chart
-
-      data: {// values on X-Axis
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D' ], 
-	       datasets: [
-          {
-            label: "Sales",
-            data: [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-            backgroundColor: 'white'
-          },  
-        ]
-      },
+  createLineChart(){
+    let htmlRef = this.elementRef.nativeElement.querySelector(`#dailySalesChart`);
+    const data_line = {
+      labels: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+      datasets: [{
+        label: 'Daily Sale',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        fill: true,
+        borderColor: 'rgb(220, 239, 245)',
+        tension: 0.1
+      }]
+    };
+      
+    this.lineChart = new Chart(htmlRef, {
+      type: 'line', //this denotes tha type of chart
+      data: data_line,
       options: {
-        aspectRatio:2.3
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+      
+    });
+  }
+  createBarChart(){
+    let htmlRef = this.elementRef.nativeElement.querySelector(`#subsBarChart`);
+    let data_bar = {// values on X-Axis
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul' ], 
+        datasets: [{
+          label: 'Subscriptions',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.3)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgb(85, 104, 2, 0.3)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderWidth: 1
+        }]
+      };
+      
+    this.barChart = new Chart(htmlRef, {
+      type: 'bar', //this denotes tha type of chart
+      data: data_bar,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+      
+    });
+  }
+  createBubbleChart(){
+    let htmlRef = this.elementRef.nativeElement.querySelector(`#completedTasksBubbleChart`);
+    const data_bubble = {
+      datasets: [{
+        label: 'Task Completed',
+        data: [{
+          x: 20, y: 30, r: 15
+        }, {
+          x: 24, y: 18, r: 30
+        }, {
+          x: 28, y: 26, r: 10
+        },  {
+          x: 32, y: 20, r: 20
+        },  {
+          x: 36, y: 24, r: 25
+        }, {
+          x: 40, y: 10, r: 10
+        }],
+        backgroundColor: 'rgb(255, 99, 132)'
+      }]
+    };
+    this.bubbleChart = new Chart(htmlRef, {
+      type: 'bubble', //this denotes tha type of chart
+      data: data_bubble,
+      options: {
       }
       
     });
