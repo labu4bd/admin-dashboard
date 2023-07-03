@@ -22,6 +22,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -39,7 +42,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule,
+    MatTableModule,
+    MatIconModule
   ],
   declarations: [
     DashboardComponent,

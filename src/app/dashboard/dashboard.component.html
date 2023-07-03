@@ -138,36 +138,12 @@
         <div class="row dashboard-rows">
             <div class="col-lg-6 col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-tabs card-header-primary">
-                        <div class="nav-tabs-navigation">
-                            <div class="nav-tabs-wrapper">
-                                <span class="nav-tabs-title">Tasks:</span>
-                                <ul class="nav nav-tabs" data-tabs="tabs">
-                                    <li class="nav-item">
-                                        <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
-                                            <i class="material-icons">bug_report</i> Bugs
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a mat-button class="nav-link" href="#messages" data-toggle="tab">
-                                            <i class="material-icons">code</i> Website
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a mat-button class="nav-link" href="#settings" data-toggle="tab">
-                                            <i class="material-icons">cloud</i> Server
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="profile">
+                        <mat-tab-group class="mat-tab-group" mat-stretch-tabs="false" mat-align-tabs="start">
+                            <mat-tab>
+                                <ng-template mat-tab-label [backgroundColor]="green">
+                                    <i class="material-icons">bug_report</i> Bugs
+                                </ng-template>  
                                 <table class="table">
                                     <tbody>
                                         <tr>
@@ -183,11 +159,11 @@
                                             </td>
                                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -204,11 +180,11 @@
                                             </td>
                                             <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -226,11 +202,11 @@
                                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -247,18 +223,21 @@
                                             </td>
                                             <td>Create 4 Invisible User Experiences you Never Knew About</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="tab-pane" id="messages">
+                            </mat-tab>
+                            <mat-tab>
+                                <ng-template mat-tab-label>
+                                    <i class="material-icons">code</i> Website
+                                </ng-template> 
                                 <table class="table">
                                     <tbody>
                                         <tr>
@@ -275,11 +254,11 @@
                                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -296,18 +275,21 @@
                                             </td>
                                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="tab-pane" id="settings">
+                            </mat-tab>
+                            <mat-tab>
+                                <ng-template mat-tab-label>
+                                    <i class="material-icons">cloud</i> Server
+                                </ng-template> 
                                 <table class="table">
                                     <tbody>
                                         <tr>
@@ -323,11 +305,11 @@
                                             </td>
                                             <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -345,11 +327,11 @@
                                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
@@ -366,18 +348,18 @@
                                             </td>
                                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                                             <td class="td-actions text-right">
-                                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">edit</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-edit">edit</mat-icon>
                                                 </button>
-                                                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
-                                                    <i class="material-icons">close</i>
+                                                <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                                                    <mat-icon class="mat-icon-close">close</mat-icon>
                                                 </button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
+                            </mat-tab>
+                        </mat-tab-group>
                     </div>
                 </div>
             </div>
