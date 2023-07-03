@@ -141,8 +141,10 @@
                     <div class="card-body">
                         <mat-tab-group class="mat-tab-group" mat-stretch-tabs="false" mat-align-tabs="start">
                             <mat-tab>
-                                <ng-template mat-tab-label [backgroundColor]="green">
-                                    <i class="material-icons">bug_report</i> Bugs
+                                <ng-template mat-tab-label>
+                                    <div class="mat-tab">
+                                        <i class="material-icons">bug_report</i> Bugs
+                                    </div> 
                                 </ng-template>  
                                 <table class="table">
                                     <tbody>
@@ -236,7 +238,9 @@
                             </mat-tab>
                             <mat-tab>
                                 <ng-template mat-tab-label>
-                                    <i class="material-icons">code</i> Website
+                                    <div class="mat-tab">
+                                        <i class="material-icons">code</i> Website
+                                    </div>
                                 </ng-template> 
                                 <table class="table">
                                     <tbody>
@@ -288,7 +292,9 @@
                             </mat-tab>
                             <mat-tab>
                                 <ng-template mat-tab-label>
-                                    <i class="material-icons">cloud</i> Server
+                                    <div class="mat-tab">
+                                        <i class="material-icons">cloud</i> Server
+                                    </div>
                                 </ng-template> 
                                 <table class="table">
                                     <tbody>
@@ -365,7 +371,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-warning">
+                    <div class="card-header card-header-warning-table">
                         <h4 class="card-title">Employees Stats</h4>
                         <p class="card-category">New employees on 15th September, 2016</p>
                     </div>
@@ -410,159 +416,3 @@
         </div>
     </div>
 </div>
-
-<!--
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <mat-grid-list class="mat-grid-list" cols="4" rowHeight="2:1">
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                <div class="card-icons used">
-                                    <i class="material-icons">content_copy</i>
-                                </div>
-                            </mat-card-title>
-                            <mat-card-subtitle></mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content class="small-card-content">
-                            <p>Used Space</p>
-                            <h3>49/50
-                                <small>GB</small>
-                            </h3>
-                            <mat-divider></mat-divider>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <div class="stats">
-                                <i class="material-icons text-danger">warning</i>
-                                <a href="">Get More Space...</a>
-                            </div>
-                        </mat-card-actions>
-                        <mat-card-footer>
-                            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                        </mat-card-footer>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                <div class="card-icons revenue">
-                                    <i class="material-icons">store</i>
-                                </div>
-                            </mat-card-title>
-                            <mat-card-subtitle></mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content class="small-card-content">
-                            <p class="card-category">Revenue</p>
-                            <h3 class="card-title">$34,245</h3>
-                            <mat-divider></mat-divider>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <div class="stats">
-                                <i class="material-icons">date_range</i> Last 24 Hours
-                            </div>
-                        </mat-card-actions>
-                        <mat-card-footer>
-                            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                        </mat-card-footer>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                <div class="card-icons issue">
-                                    <i class="material-icons">info_outline</i>
-                                </div>
-                            </mat-card-title>
-                            <mat-card-subtitle></mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content class="small-card-content">
-                            <p class="card-category">Fixed Issues</p>
-                            <h3 class="card-title">75</h3>
-                            <mat-divider></mat-divider>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <div class="stats">
-                                <i class="material-icons">local_offer</i> Tracked from Github
-                            </div>
-                        </mat-card-actions>
-                        <mat-card-footer>
-                            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                        </mat-card-footer>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                <div class="card-icons follower">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-                                </div>
-                            </mat-card-title>
-                            <mat-card-subtitle></mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content class="small-card-content">
-                            <p class="card-category">Followers</p>
-                            <h3 class="card-title">+245</h3>
-                            <mat-divider></mat-divider>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <div class="stats">
-                                <i class="material-icons">update</i> Just Updated
-                            </div>
-                        </mat-card-actions>
-                        <mat-card-footer>
-                            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                        </mat-card-footer>
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-        <div class="row">
-            <mat-grid-list class="mat-grid-list" cols="3" rowHeight="2:1">
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-                        <mat-card-header>
-                            <mat-card-title>
-                                
-                            </mat-card-title>
-                            <mat-card-subtitle></mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content class="card-content">
-                            <div class="subscriptions-chart">
-                                <canvas  id="subsChart" >{{ chart }}</canvas>
-                            </div>
-                            <h4 class="card-title">Email Subscriptions</h4>
-                            <p class="card-category">Last Campaign Performance</p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <mat-divider></mat-divider>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                                </div>
-                            </div>
-                        </mat-card-actions>
-                        <mat-card-footer>
-                            
-                        </mat-card-footer>
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-
-                    </mat-card>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-card class="mat-card">
-
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </div>
-    </div>
-</div>
--->

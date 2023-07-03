@@ -1,12 +1,16 @@
 .dashboard-rows{
     margin-top: 4%;
+    margin-bottom: 1%;
 }
+/* Dashboard first row*/
 .card-icons{
     border-radius: 3px;
     padding: 15px;
     margin-top: -20px;
     margin-right: 15px;
     float: left;
+    width: 33%;
+    text-align: center;
 }
 .card-icons i{
     font-size: 35px;
@@ -33,6 +37,7 @@
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,188,212,.4);
     background: linear-gradient(60deg,#26c6da,#00acc1);
 }
+/* Dashboard second row*/
 .small-card-content{
     color: #295ca1;
     line-height: 1;
@@ -50,22 +55,28 @@
 .dailySales-chart{
     border-radius: 5px;
     margin-top: -10%;
+    margin-bottom: 5%;
     background: linear-gradient(60deg,#66bb6a,#43a047);
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(76,175,80,.4);
 }
 .subscriptions-chart{
     border-radius: 5px;
     margin-top: -10%;
+    margin-bottom: 5%;
     background: linear-gradient(60deg,#ffc4c4,#ff917d);
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgb(254 81 27 / 40%);
 }
 .completedTasks-chart{
     border-radius: 5px;
     margin-top: -10%;
+    margin-bottom: 5%;
     background: linear-gradient(60deg,#6cd5ff,#d4e8ff);
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(148, 159, 252, 0.4);
 }
-
+.stats i{
+    vertical-align: middle;
+}
+/* dashboard third row*/
 .td-actions{
     min-width: 120px;
     text-align: right;
@@ -84,6 +95,18 @@
     border-radius: 5px;
     background: linear-gradient(60deg,#ab47bc,#8e24aa);
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+}
+.mat-tab{
+    color: floralwhite;
+}
+.mat-tab i{
+    vertical-align: middle;
+}
+.card-header-warning-table{
+    border-radius: 5px;
+    margin-top: -3%;
+    background: linear-gradient(60deg,#ffa726,#fb8c00);
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(255,152,0,.4);
 }
 /*end of used css*/
 
