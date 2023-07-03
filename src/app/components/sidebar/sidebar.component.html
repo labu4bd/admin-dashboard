@@ -31,7 +31,7 @@
         </div>
     </div>
     <mat-divider></mat-divider>
-    <div *ngFor="let menuItem of menuItems">
+    <div *ngFor="let menuItem of menuItems" class="sidebar-menu">
         <a mat-list-item routerLinkActive="list-item-active" [routerLink]="[menuItem.path]">
             <mat-icon class="sidebar_icon">{{menuItem.icon}}</mat-icon>
             <span class="sidebar_title">{{menuItem.title}}</span>

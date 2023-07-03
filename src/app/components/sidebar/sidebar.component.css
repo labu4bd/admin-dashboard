@@ -3,10 +3,17 @@
 }
 .companyInfo{
     display: flex;
+    margin-bottom: 5%;
 }
 .company_logo img{
     width: 50px !important;
     height: 50px !important;
+}
+.sidebar-menu{
+    margin-top: 15%;
+}
+.sidebar-menu a mat-icon{
+    vertical-align: middle;
 }
 /*Design the Company name*/
 .company_text {

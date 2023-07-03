@@ -81,7 +81,9 @@
     min-width: 120px;
     text-align: right;
 }
+
 .table>tbody>tr>td {vertical-align: middle}
+
 .mat-icon-edit{
     background-color: transparent;
     color: #9c27b0;
@@ -104,28 +106,7 @@
 }
 .card-header-warning-table{
     border-radius: 5px;
-    margin-top: -3%;
+    margin: -3% 2% 1% 2%;;
     background: linear-gradient(60deg,#ffa726,#fb8c00);
     box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(255,152,0,.4);
-}
-/*end of used css*/
-
-.mat-grid-list{
-    margin-top: 4%;
-}
-.mat-grid-tile-content {
-    padding: 2px;
-    margin: 5px;
-}
-
-.mat-card{
-    width: 75% !important;
-    margin-top: 5%;
-    margin-bottom: 1%;
-}
-
-.card-content{
-    color: #3c4858;
-    line-height: 1;
-    margin-top: -5%;
 }
