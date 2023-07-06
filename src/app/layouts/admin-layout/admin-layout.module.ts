@@ -47,7 +47,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTabsModule,
     MatTableModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   declarations: [
     DashboardComponent,

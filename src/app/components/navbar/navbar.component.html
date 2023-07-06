@@ -2,12 +2,25 @@
     <button mat-icon-button (click)="toggleSidebar()" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+    <span>{{getTitle()}}</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+    <mat-form-field appearance="fill" style="margin-top: 1.5%;">
+      <mat-label>Search....</mat-label>
+      <input matInput placeholder="Search...">
+      <mat-icon matSuffix>search</mat-icon>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon matBadge="5" matBadgeColor="warn">notifications</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Mike John responded to your email</button>
+      <button mat-menu-item>You have 5 new tasks</button>
+      <button mat-menu-item>You're now friend with Andrew</button>
+      <button mat-menu-item>Another Notification</button>
+      <button mat-menu-item>Another One</button>
+    </mat-menu>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+      <mat-icon >person</mat-icon>
     </button>
 </mat-toolbar>
