@@ -1,0 +1,30 @@
+.notify-row{
+    margin: 5% 0 2% 0;
+}
+
+.card-header-danger{
+    margin: -3% 0% 1% 0%;
+    border-radius: 5px;
+    color: ghostwhite;
+    background-color: #9c27b0;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+}
+
+.card-header-title{
+    color: ghostwhite;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 2.125rem;
+    line-height: 1em;
+    font-weight: 300;
+    text-decoration: none;
+}
+.card-category{
+    color: rgba(255,255,255,.62);
+    font-size: 1.125rem;
+    line-height: 1em;
+    font-family: Roboto, sans-serif;
+}
+
+.notify-btn-row{
+    margin: 1%;
+}
