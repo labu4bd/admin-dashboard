@@ -1,2 +1,16 @@
 <mat-divider></mat-divider>
-<p>footer works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <button mat-button color="primary"><a href="https://labu4bd.github.io/labu4bd/" target="_blank" >Labu4bd</a></button>
+                <button mat-button color="primary">About Us</button>
+                <button mat-button color="primary">Blog</button>
+            </div>
+            <div class="col-lg-6 col-md-12" style="text-align: right;">
+                &copy;
+                {{testDate | date: 'yyyy'}}, made with love by Labu4bd for a better web.
+            </div>
+        </div>
+    </div>
+</div>    
